@@ -1,0 +1,90 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "sales_data_suite",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "transaction_id"
+      },
+      "meta": {
+        "description": "transaction_id cannot be null"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "transaction_id"
+      },
+      "meta": {
+        "description": "transaction_id must be unique across all records"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "customer_id"
+      },
+      "meta": {
+        "description": "customer_id cannot be null"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "product_category"
+      },
+      "meta": {
+        "description": "product_category cannot be null"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "product_category",
+        "value_set": [
+          "Electronics",
+          "Apparel",
+          "Home",
+          "Books",
+          "Beauty"
+        ]
+      },
+      "meta": {
+        "description": "product_category must belong to allowed categories list"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "amount"
+      },
+      "meta": {
+        "description": "amount cannot be null"
+      }
+    },
+    {
+      "expectation_type": "expect_column_min_to_be_between",
+      "kwargs": {
+        "column": "amount",
+        "min_value": 0.01
+      },
+      "meta": {
+        "description": "amount must be positive"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "transaction_date"
+      },
+      "meta": {
+        "description": "transaction_date cannot be null"
+      }
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "great_expectations_version": "0.18.12"
+  }
+}
